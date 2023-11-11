@@ -80,9 +80,40 @@ module.exports = {
     // in plain CommonJS modules, you can't use `import foo = require('foo')` to pass this rule, so it has to be disabled
     '@typescript-eslint/no-var-requires': 'off',
 
+    '@typescript-eslint/no-explicit-any': 'off',
+
     // The core 'no-unused-vars' rules (in the eslint:recommended ruleset)
     // does not work with type definitions
-    'no-unused-vars': 'off',
+    'object-curly-spacing': ['error', 'always'],
+
+    //"import/no-default-export": "error",
+
+    'comma-dangle': ['error', {
+      'arrays': 'always-multiline',
+      'objects': 'always-multiline',
+      'exports': 'always-multiline',
+      'imports': 'always-multiline',
+    }],
+
+    'semi': ['error', 'never'],
+
+    "no-multiple-empty-lines": ['error', {
+      'max': 2,
+    }],
+
+    'vue/script-indent': ['error', 2, {
+      'baseIndent': 1,
+    }],
+    //"indent": ["error", 2],
+    // "overrides": [
+    //   {
+    //     "files": ["*.vue"],
+    //     "rules": {
+    //       "indent": 0
+    //     }
+    //   }
+    // ],
+
 
     // allow debugger during development only
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
