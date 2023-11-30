@@ -1,4 +1,4 @@
-import { AxiosHeaders, AxiosResponse, Method} from 'axios'
+import { AxiosHeaders, AxiosResponse, Method } from 'axios'
 
 type QueryParams = Record<string, any>
 
@@ -6,7 +6,7 @@ import { api } from 'src/boot/axios'
 
 export interface RequestArgs extends RequestInit {
   loading?: boolean,
-  params: QueryParams | null
+  params: QueryParams | null,
 }
 
 export async function request<T> (url: string, rest: RequestArgs): Promise<AxiosResponse<T>> {
@@ -16,7 +16,7 @@ export async function request<T> (url: string, rest: RequestArgs): Promise<Axios
     method: (rest.method as Method),
     params: {
       ...rest.params,
-      loading: rest.loading
+      loading: rest.loading,
     },
   })
 }

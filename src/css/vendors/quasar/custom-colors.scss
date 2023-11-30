@@ -1,0 +1,12 @@
+// Цвета, которые применяются при передаче в компонент
+// Пример:
+//  <q-btn
+//    color="text-main-color"
+//  ></q-btn>
+.text-text-main-color {
+  color: $color-font-main !important;
+}
+
+.text-text-white-color {
+  color: white !important;
+}

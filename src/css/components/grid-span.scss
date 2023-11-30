@@ -1,0 +1,7 @@
+$columns: 36;
+
+@for $i from 1 through $columns {
+  .grid-span-#{$i} {
+    grid-column: span $i !important;
+  }
+}

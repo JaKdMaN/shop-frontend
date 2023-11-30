@@ -1,0 +1,87 @@
+// Внутренние переменные проекта.
+
+// FONT-COLORS
+$color-font-main: #303030;
+
+// COLORS
+$color-c-blue-light-1: #EBF2FA;
+$color-c-blue-light-2: rgba(92, 187, 246, 0.2);
+$color-table-row: #FFFFFF;
+$color-table-row-grey: #F5F5F5;
+$color-table-row-hover: #F8F9FA;
+$color-table-header-light-red: #FFEBEE;
+
+// Переменные перенесены из файла quasar.variables.scss(названия менять нельзя)
+// Нужны для применения в файлах стилей, которые импортятся внутри
+// quasar.variables.scss
+$primary   : #121214;
+$secondary : #F9F9F9;
+$accent    : #49D0FF;
+
+$dark      : #1D1D1D;
+$dark-page : #121212;
+
+$positive  : #4CAF50;
+$negative  : #FF5252;
+$info      : #1976D2;
+$warning   : #FB8C00;
+
+// DURATIONS
+$duration-default: 300ms;
+$transition-default: $duration-default ease;
+
+// BORDER-RADIUS
+$border-radius-xs: 4px;
+$border-radius-sm: 8px;
+$border-radius-md: 12px;
+$border-radius-lg: 16px;
+$border-radius-xl: 20px;
+$border-radius-btn: 10px;
+
+// BUTTONS
+$base-button-height: 44px;
+$base-button-icon-margin: 12px;
+
+// SHADOWS
+$shadow-custom-1:
+  0px 2px 1px rgba(137, 137, 137, 0.2),
+  0px 1px 1px rgba(137, 137, 137, 0.14),
+  0px 1px 3px rgba(137, 137, 137, 0.12);
+
+$shadow-custom-2:
+  0px 3px 1px rgba(137, 137, 137, 0.2),
+  0px 2px 2px rgba(137, 137, 137, 0.14),
+  0px 1px 5px rgba(137, 137, 137, 0.12);
+
+$shadow-custom-3:
+  0px 2px 4px rgba(137, 137, 137, 0.2),
+  0px 4px 5px rgba(137, 137, 137, 0.14),
+  0px 1px 10px rgba(137, 137, 137, 0.12);
+
+$shadow-custom-4:
+  0px 3px 5px rgba(137, 137, 137, 0.2),
+  0px 6px 10px rgba(137, 137, 137, 0.14),
+  0px 1px 18px rgba(137, 137, 137, 0.12);
+
+$shadow-custom-5:
+  0px 3px 5px rgba(255, 153, 57, 0.2),
+  0px 6px 10px rgba(255, 153, 57, 0.14),
+  0px 1px 18px rgba(255, 153, 57, 0.35);
+
+$shadow-custom-6:
+  0px 4px 18px 3px rgba(194, 170, 134, 0.12),
+  0px 10px 14px 1px rgba(194, 170, 134, 0.14),
+  0px 6px 6px -3px rgba(194, 170, 134, 0.2);
+
+$shadow-custom-7:
+  0 5px 5px -3px hsla(0,0%,62.7%,.2),
+  0 8px 10px 1px hsla(0,0%,62.7%,.14),
+  0 3px 14px 2px hsla(0,0%,62.7%,.12);
+
+$shadow-custom-8:
+  0 2px 4px -1px hsla(0,0%,62.7%,.2),
+  0 4px 5px 0 hsla(0,0%,62.7%,.14),
+  0 1px 10px 0 hsla(0,0%,62.7%,.12);
+
+// Z-INDEX
+$z-index-header: 2000 // такое значение задано по дефолту в quasar

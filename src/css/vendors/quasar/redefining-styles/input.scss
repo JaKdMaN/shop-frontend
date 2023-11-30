@@ -1,0 +1,41 @@
+input {
+  font-size: 16px;
+  color: $color-font-main !important;
+}
+
+.q-field {
+  &__messages {
+    font-size: 14px;
+  }
+
+  &__bottom {
+    position: absolute;
+    padding-left: 0px;
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__label {
+    font-size: 16px;
+  }
+
+  &--dense {
+    font-size: 16px;
+
+    .q-field__label {
+      font-size: 16px;
+    }
+  }
+
+  &--outlined .q-field__control {
+    border-radius: $border-radius-btn;
+  }
+}
+
+.q-checkbox {
+  &__label {
+    font-size: 16px;
+  }
+}
