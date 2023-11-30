@@ -1,0 +1,114 @@
+/*
+Как применять:
+  единица значит 4px
+  .ml-5 { margin-left: 20px }}
+  .ma-2 { margin: 8px }}
+  .pt-3 { padding-top: 12px }}
+  .pa-1 { padding: 4px }}
+*/
+
+$sides: (top, bottom, left, right);
+
+@for $i from 0 through 25 {
+  .ma-#{$i} {
+    margin: #{$i * 4}px !important;
+  }
+
+  .pa-#{$i} {
+    padding: #{$i * 4}px !important;
+  }
+
+  .my-#{$i} {
+    margin-top: #{$i * 4}px !important;
+    margin-bottom: #{$i * 4}px !important;
+  }
+
+  .py-#{$i} {
+    padding-top: #{$i * 4}px !important;
+    padding-bottom: #{$i * 4}px !important;
+  }
+
+  .mx-#{$i} {
+    margin-left: #{$i * 4}px !important;
+    margin-right: #{$i * 4}px !important;
+  }
+
+  .px-#{$i} {
+    padding-left: #{$i * 4}px !important;
+    padding-right: #{$i * 4}px !important;
+  }
+
+  @each $side in $sides {
+    .m#{str-slice($side, 0, 1)}-#{$i} {
+      margin-#{$side}: #{$i * 4}px !important;
+    }
+    .p#{str-slice($side, 0, 1)}-#{$i} {
+      padding-#{$side}: #{$i * 4}px !important;
+    }
+  }
+}
+
+// SPACE и GRID переменные Quasar взяты из quasar.variables.css
+// SPACE
+$space-base   : 16px !default;
+$space-x-base : $space-base !default;
+$space-y-base : $space-base !default;
+
+// GRID
+$flex-cols      : 12 !default;
+$flex-gutter-xs : ($space-base * .25) !default;
+$flex-gutter-sm : ($space-base * .5) !default;
+$flex-gutter-md : $space-base !default;
+$flex-gutter-lg : ($space-base * 1.5) !default;
+$flex-gutter-xl : ($space-base * 2) !default;
+
+$custom-flex-gutter: ('none': 0, 'xs': $flex-gutter-xs, 'sm': $flex-gutter-sm, 'md': $flex-gutter-md, 'lg': $flex-gutter-lg, 'xl': $flex-gutter-xl) !default;
+
+// Размер внутреннего отступа ховер эффекта(к примеру чекбокса). Актуально для элементов без пропса dense
+$hover-effect-padding: 10px;
+
+// Т.к. в Quasar размер элементов, у которых есть ховер эффекты, соответствует размеру этих эффектов(сам чекбокс меньше области эффекта),
+// то для того чтобы выравнивать в сетке по левому краю такие компоненты, были добавлены данные классы(аналогичны классам Quasar .q-gutter-sm и т.д.)
+// Применять на родителе группы элементов(ознакомиться с .q-gutter на сайте Quasar)
+@each $key, $value in $custom-flex-gutter {
+
+  .c-gutter-#{$key} {
+    margin-left: #{-$value};
+    margin-top:  #{-$value};
+
+    & > * {
+      margin-left: #{$value};
+      margin-top:  #{$value - $hover-effect-padding};
+
+      &:first-child {
+        margin-left: #{$value - $hover-effect-padding};
+      }
+    }
+  }
+
+  .c-gutter-x-#{$key} {
+    margin-left: #{-$value};
+
+    & > * {
+      margin-left: #{$value};
+
+      &:first-child {
+        margin-left: #{$value - $hover-effect-padding};
+      }
+    }
+  }
+}
+
+// если необходимо выровнять по левому краю только один элемент, а не группу как в c-gutter(для dense компонентов)
+.hover-sp-x-fix {
+  margin-left: -10px;
+}
+
+
+// У полей ввода Quasar div, где показывается текст ошибки, физически занимает место
+// Если поле будет располагаться в конце дива в одно ряду с другими элементам,
+// то оно будет всегда выше других элементов
+// Этот класс фиксит это
+.control-m-fix {
+  margin-bottom: -20px;
+}

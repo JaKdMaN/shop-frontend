@@ -1,1 +1,67 @@
 // app global css in SCSS form
+
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-variant-numeric: normal;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+
+  @include below('t_md') {
+    font-size: 10px !important;
+  }
+
+  @include between('t_md', 'd_md') {
+    font-size: 12px !important;
+  }
+
+  @include at('d_md') {
+    font-size: 16px !important;
+  }
+}
+
+body {
+  font-family: 'RF Dewi Extended', sans-serif;
+  line-height: 1.5rem;
+  color: $color-font-main;
+  background: #FFFFFF;
+
+  @include below('t_md') {
+    font-size: 10px !important;
+  }
+
+  @include between('t_md', 'd_md') {
+    font-size: 12px !important;
+  }
+
+  @include at('d_md') {
+    font-size: 16px !important;
+  }
+}
+
+a,
+a:hover {
+  text-decoration: none !important;
+  outline: none !important;
+  color: unset;
+}
+
+button {
+  outline: none !important;
+}
+
+.row-pointer > .v-data-table__wrapper > table > tbody > tr:hover {
+  cursor: pointer;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
