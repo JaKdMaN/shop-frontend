@@ -24,14 +24,14 @@
 // ---QUASAR VARIABLES---
 
 $black: (
-  'base': #333333,
+  'base': #121214,
   'lighten-1': rgba(0, 0, 0, 0.6),
 );
 
 // Typography
-$h1:        (size: 1.5rem,   line-height: 2rem,     letter-spacing: .01em,     weight: 700) !default; // 24px
+$h1:        (size: 2rem,     line-height: 2.625rem, letter-spacing: .01em,     weight: 900) !default; // 32px
 $h2:        (size: 1.375rem, line-height: 2rem,     letter-spacing: .01em,     weight: 700) !default; // 22px
-$h3:        (size: 1.25rem,  line-height: 2rem,     letter-spacing: .01em,     weight: 700) !default; // 20px
+$h3:        (size: 1.25rem,  line-height: 1.875rem, letter-spacing: .01em,     weight: 700) !default; // 20px
 $h4:        (size: 2.125rem, line-height: 2.5rem,   letter-spacing: .00735em,  weight: 400) !default;
 $h5:        (size: 1.5rem,   line-height: 2rem,     letter-spacing: normal,    weight: 400) !default;
 $h6:        (size: 1.25rem,  line-height: 2rem,     letter-spacing: .0125em,   weight: 500) !default;

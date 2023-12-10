@@ -26,7 +26,7 @@
   const links = computed(() => {
     return [
       { icon: 'mdi-star-outline', path: '/favorite' },
-      { icon: 'mdi-account', path: '/' },
+      { icon: 'mdi-account', path: '/auth' },
     ]
   })
 </script>

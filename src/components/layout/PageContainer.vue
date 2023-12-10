@@ -1,32 +1,41 @@
 <template>
   <div class="page-container">
+    <BreadCrumbs
+    class="mt-4"
+      v-if="backLink && title"
+      :link="backLink"
+      :title="title"
+    />
+    <h1 v-if="title">{{ title }}</h1>
     <div class="page-container__content">
-      <slot/>
+      <slot />
     </div>
   </div>
 </template>
-<script lang="ts">
+<script setup lang="ts">
+  import { ILink } from 'src/stores/types/common/other'
+
+  interface IPageContainerProps {
+    backLink?: ILink,
+    title?: string,
+  }
+
+  defineProps<IPageContainerProps>()
 
 </script>
 <style lang="scss" scoped>
-
 .page-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  @include display-flex(column, flex-start, flex-start);
   flex-grow: 1;
+  row-gap: 46px;
+  position: relative;
+  max-width: 1362px;
+  margin-left: auto;
+  margin-right: auto;
 
   &__content {
-    max-width: 1362px;
+    position: relative;
     width: 100%;
-    flex-grow: 1;
-    margin-left: auto;
-    margin-right: auto;
-
-    :deep(> *) {
-      width: 100%;
-      height: 100%;
-    }
   }
 }
 </style>
