@@ -1,9 +1,14 @@
 input {
   font-size: 16px;
-  color: $color-font-main !important;
+  color: #424347 !important;
 }
 
 .q-field {
+  width: 100%;
+  background: $secondary;
+  border-radius: $border-radius-xs;
+  padding: 10px 15px;
+
   &__messages {
     font-size: 14px;
   }
@@ -18,6 +23,7 @@ input {
   }
 
   &__label {
+    color: #3C3D44;
     font-size: 16px;
   }
 
@@ -36,6 +42,6 @@ input {
 
 .q-checkbox {
   &__label {
-    font-size: 16px;
+    font-size: 14px;
   }
 }

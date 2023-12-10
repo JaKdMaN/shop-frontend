@@ -1,12 +1,10 @@
 <template>
   <q-header class="header row">
-    <PageContainer>
-      <div class="flex justify-between items-center">
-        <DefaultPageLinkLogo/>
-        <NavMenu/>
-        <AppHeaderActions/>
-      </div>
-    </PageContainer>
+    <div class="header__inner">
+      <DefaultPageLinkLogo />
+      <NavMenu />
+      <AppHeaderActions />
+    </div>
   </q-header>
 </template>
 <script lang="ts" setup>
@@ -15,9 +13,16 @@
 <style lang="scss" scoped>
 .header {
   position: fixed;
+  justify-content: center;
   align-items: center;
   height: 100px;
 
-  background: #121214 !important;
+  background: $primary !important;
+
+  &__inner {
+    @include display-flex(row, space-between, center);
+    max-width: 1362px;
+    width: 100%;
+  }
 }
 </style>
