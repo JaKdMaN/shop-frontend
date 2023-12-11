@@ -29,6 +29,13 @@ module.exports = configure(function (/* ctx */) {
       warnings: true,
       errors: true,
     },
+    vite: {
+      resolve: {
+        alias: {
+          '@': require('path').resolve(__dirname, './src'),
+        },
+      },
+    },
 
     // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
     // preFetch: true,
@@ -38,9 +45,9 @@ module.exports = configure(function (/* ctx */) {
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
     boot: [
       'axios',
-      'vee-validate',
-      'global-components',
-      'directives',
+      // 'vee-validate',
+      // 'global-components',
+      // 'directives',
     ],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
