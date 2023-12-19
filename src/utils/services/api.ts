@@ -21,26 +21,51 @@ const createApi = () => {
 
     config.withCredentials = true
 
-    if (window.io) {
-      config.headers['X-Socket-Id'] = window.io.SocketId()
+    if (url) {
+      requestSearchFieldBuffer[url] = search
     }
+
+    if (!config.params || config.params && config.params.loading !== false) {
+      console.log('loading')
+    }
+
+    config.withCredentials = true
 
     config.baseURL = config.baseURL || baseURL
 
     return config
-  })
+  },
+    (reason) => {
+      console.log('loading end')
+      return Promise.reject(reason)
+    }
+  )
 
   api.interceptors.response.use((response) => {
     const { url } = response.config,
-      { params } = response.config
+          { params } = response.config
+
     const search = (params && params.search) || ''
 
     if (response.data) {
       response.data = camelcaseKeys(response.data, { deep: true })
     }
 
+    if (!params || params.loading !== false) {
+      console.log('loading end')
+    }
+
+    if (url && requestSearchFieldBuffer[url] !== search) {
+      Promise.reject('late request')
+    }
+
     return response
-  })
+  },
+    (reason) => {
+      console.log('loading end')
+      return Promise.reject(reason)
+    }
+  )
 
   return api
 }
