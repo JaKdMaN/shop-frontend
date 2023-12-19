@@ -45,6 +45,7 @@ module.exports = configure(function (/* ctx */) {
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
     boot: [
       'axios',
+      'pinia',
       // 'vee-validate',
       // 'global-components',
       // 'directives',
